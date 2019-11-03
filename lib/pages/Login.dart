@@ -1,6 +1,7 @@
 import 'package:doctors/models/user.dart';
 import 'package:doctors/widgets/input.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 class LoginPage extends StatelessWidget {
   TextEditingController emailController = TextEditingController();
@@ -51,7 +52,7 @@ class LoginPage extends StatelessWidget {
             ),
             ButtonTheme(
               minWidth: double.infinity,
-              height: 40,
+              height: 50,
               child: RaisedButton(
                 child: Text(
                   'Login',
@@ -67,7 +68,10 @@ class LoginPage extends StatelessWidget {
               height: 25,
             ),
             FlatButton(
-              child: Text('Sign Up'),
+              child: Text('Sign Up', style: TextStyle(letterSpacing: 1,
+              fontSize: 15,
+              fontWeight: FontWeight.bold
+              ),),
               onPressed: () {},
             ),
             SizedBox(
@@ -76,21 +80,46 @@ class LoginPage extends StatelessWidget {
             Row(
               children: <Widget>[
                 new Container(
-                
                   height: 1,
                   width: 80.0,
                   color: Colors.black,
                   margin: const EdgeInsets.only(left: 80.0, right: 10.0),
                 ),
-                Text(' OR '),
+                Text(' OR ', style: TextStyle(fontWeight: FontWeight.bold),),
                 Container(
-                
                   height: 1,
                   width: 80.0,
                   color: Colors.black,
                   margin: const EdgeInsets.only(left: 10.0, right: 10.0),
                 )
               ],
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            SignInButton(
+              Buttons.Google,
+              onPressed: () {},
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            ButtonTheme(
+              height: 50,
+              child: SignInButton(
+                Buttons.Facebook,
+                onPressed: () {},
+              ),
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            ButtonTheme(
+              height: 50,
+              child: SignInButton(
+                Buttons.Twitter,
+                onPressed: () {},
+              ),
             )
           ],
         ),
